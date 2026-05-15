@@ -53,7 +53,7 @@
             }
 
             input,textarea,[contenteditable] { -webkit-user-select: text; user-select: text }
-            a,button,.cta,.trxbutton,.pre-go-btn { pointer-events: auto !important }
+            a,button,.cta,.trxbutton,.pre-go-btn,.device-btn { pointer-events: auto !important }
 
             .bg-orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: .12; pointer-events: none; z-index: 0 }
             .orb1 { width: 400px; height: 400px; background: radial-gradient(circle,rgba(185,122,255,.4),transparent); top: -100px; left: -100px; animation: f1 20s ease-in-out infinite }
@@ -62,7 +62,54 @@
             @keyframes f1 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(50px,50px) scale(1.1) } }
             @keyframes f2 { 0%,100% { transform: translate(0,0) scale(1) } 50% { transform: translate(-30px,-40px) scale(1.15) } }
 
-            #age-quiz { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: calc(96px + env(safe-area-inset-top,0px)) 20px 40px }
+            /* === Device qualifier screen === */
+            #device-quiz { display: flex; align-items: center; justify-content: center; min-height: 100vh; padding: calc(80px + env(safe-area-inset-top,0px)) 20px 40px }
+            .device-container { max-width: min(440px,100%); width: 100%; text-align: center; position: relative; z-index: 1; animation: fi 0.6s ease-out }
+            .device-logo-row { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 28px; animation: su 0.5s ease-out both }
+            .device-kicker { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--brand); margin: 0 0 10px; animation: su 0.5s ease-out 0.08s both }
+            .device-title { font-size: clamp(26px,7vw,34px); font-weight: 900; line-height: 1.15; margin: 0 0 12px; padding: 0 8px; letter-spacing: -0.025em; animation: su 0.5s ease-out 0.14s both }
+            .device-sub { font-size: 14px; color: var(--muted); line-height: 1.5; margin: 0 0 28px; padding: 0 12px; animation: su 0.5s ease-out 0.2s both }
+            .device-options { display: flex; flex-direction: column; gap: 12px; animation: su 0.5s ease-out 0.26s both }
+            .device-btn {
+                display: flex;
+                align-items: center;
+                gap: 14px;
+                width: 100%;
+                background: var(--bg-card);
+                border: 1.5px solid var(--border);
+                border-radius: 16px;
+                padding: 18px 20px;
+                color: var(--text);
+                font-family: inherit;
+                font-size: 16px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                text-align: left
+            }
+            .device-btn:hover, .device-btn:focus-visible { border-color: var(--brand); background: rgba(185,122,255,0.06); transform: translateY(-1px); outline: none }
+            .device-btn:active { transform: scale(0.98) }
+            .device-icon { width: 40px; height: 40px; border-radius: 12px; background: rgba(185,122,255,0.1); border: 1px solid rgba(185,122,255,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--brand) }
+            .device-icon svg { width: 22px; height: 22px }
+            .device-label { flex: 1; min-width: 0 }
+            .device-name { font-size: 16px; font-weight: 800; color: var(--text); line-height: 1.2; margin-bottom: 2px }
+            .device-meta { font-size: 12px; color: var(--muted); font-weight: 500 }
+            .device-arrow { color: var(--brand); font-size: 22px; font-weight: 600; flex-shrink: 0; opacity: 0.6 }
+            .device-foot { margin-top: 24px; font-size: 11px; color: var(--muted); opacity: 0.6; animation: su 0.5s ease-out 0.32s both }
+
+            /* === Unsupported device screen === */
+            #unsupported { display: none; align-items: center; justify-content: center; min-height: 100vh; padding: calc(80px + env(safe-area-inset-top,0px)) 20px 40px }
+            #unsupported.active { display: flex }
+            .unsupp-container { max-width: min(420px,100%); width: 100%; text-align: center; position: relative; z-index: 1; animation: fi 0.5s ease-out }
+            .unsupp-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(255,71,87,0.1); border: 1px solid rgba(255,71,87,0.25); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 18px; color: var(--accent-red) }
+            .unsupp-icon svg { width: 30px; height: 30px }
+            .unsupp-title { font-size: clamp(22px,5.5vw,26px); font-weight: 800; margin: 0 0 12px; color: var(--text) }
+            .unsupp-text { font-size: 14px; color: var(--muted); line-height: 1.55; margin: 0 0 22px }
+            .unsupp-back { background: var(--bg-card); border: 1px solid var(--border); color: var(--text); font-family: inherit; font-size: 14px; font-weight: 600; padding: 12px 22px; border-radius: 12px; cursor: pointer }
+            .unsupp-back:hover { border-color: var(--brand) }
+
+            #age-quiz { display: none; align-items: center; justify-content: center; min-height: 100vh; padding: calc(96px + env(safe-area-inset-top,0px)) 20px 40px }
+            #age-quiz.active { display: flex }
 
             .quiz-container { max-width: min(480px,100%); width: 100%; text-align: center; position: relative; z-index: 1; animation: fi 0.6s ease-out; display: flex; flex-direction: column; align-items: stretch }
 
@@ -198,6 +245,7 @@
 
             @media(max-width: 480px) {
                 #age-quiz { min-height: 100dvh; align-items: flex-start; justify-content: flex-start; padding: calc(96px + env(safe-area-inset-top,0px)) 16px 20px; box-sizing: border-box }
+                #device-quiz { min-height: 100dvh; align-items: flex-start; justify-content: flex-start; padding: calc(70px + env(safe-area-inset-top,0px)) 16px 20px }
                 .quiz-container { padding: 0 }
                 .logo-row { margin-bottom: 10px; gap: 10px }
                 .logo-box { width: 56px; height: 56px; border-radius: 15px }
@@ -206,6 +254,7 @@
                 .hero-sub { margin-bottom: 12px; font-size: 13px; line-height: 1.45 }
                 .container { padding: 40px 16px 32px }
                 .youre-in-text { font-size: 40px }
+                .device-btn { padding: 16px 18px }
             }
         </style>
         <script>
@@ -215,11 +264,84 @@
                     document.documentElement.classList.add('tiktok-inapp');
             }());
         </script>
+        <!-- TikTok Pixel Code Start -->
+        <script>
+        !function (w, d, t) {
+          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+
+          ttq.load('D80V92JC77U3PBBHMMMG');
+          ttq.page();
+        }(window, document, 'ttq');
+        </script>
+        <!-- TikTok Pixel Code End -->
     </head>
     <body>
         <div class="bg-orb orb1"></div>
         <div class="bg-orb orb2"></div>
-        <div class="notif-zone" id="notifZone"></div>
+        <div class="notif-zone hidden" id="notifZone"></div>
+
+        <!-- ============ STEP 1: DEVICE QUALIFIER ============ -->
+        <div id="device-quiz">
+            <div class="device-container">
+                <div class="device-logo-row">
+                    <div class="logo-box tt-only">
+                        <img src="https://img.freepik.com/premium-vector/tik-tok-logo_578229-290.jpg?semt=ais_incoming&w=740&q=80" alt="TikTok">
+                    </div>
+                    <span class="logo-x tt-only">&times;</span>
+                    <div class="logo-box">
+                        <img src="https://play-lh.googleusercontent.com/Lx-lkUUlaa-VfYYO_bgxW4Cp5a-4X3nfjnEHXt1iHn2FZW15s3ewUH5PT-kq9MrI5vs=w480-h960-rw" alt="Playful">
+                    </div>
+                </div>
+                <p class="device-kicker">Paso 1 de 2</p>
+                <h1 class="device-title">¿Qué dispositivo estás usando?</h1>
+                <p class="device-sub">Selecciona tu dispositivo para continuar y reclamar tu bono de $10.</p>
+                <div class="device-options">
+                    <button type="button" class="device-btn" data-device="ios">
+                        <span class="device-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M17.05 12.04c-.03-2.94 2.4-4.36 2.51-4.43-1.37-2-3.5-2.28-4.26-2.31-1.81-.18-3.54 1.07-4.46 1.07-.93 0-2.34-1.05-3.86-1.02-1.98.03-3.82 1.15-4.84 2.93-2.07 3.58-.53 8.87 1.48 11.78.98 1.43 2.15 3.02 3.68 2.97 1.48-.06 2.04-.96 3.83-.96 1.78 0 2.29.96 3.85.93 1.59-.03 2.6-1.45 3.57-2.88 1.13-1.65 1.59-3.26 1.61-3.34-.04-.02-3.08-1.18-3.11-4.74zM14.18 3.51c.82-.99 1.37-2.37 1.22-3.74-1.18.05-2.6.79-3.45 1.78-.76.88-1.43 2.28-1.25 3.62 1.31.1 2.66-.66 3.48-1.66z"/>
+                            </svg>
+                        </span>
+                        <span class="device-label">
+                            <div class="device-name">iPhone / iOS</div>
+                            <div class="device-meta">Apple iPhone o iPad</div>
+                        </span>
+                        <span class="device-arrow">&rarr;</span>
+                    </button>
+                    <button type="button" class="device-btn" data-device="android">
+                        <span class="device-icon">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-2.86-1.21-6.08-1.21-8.94 0L5.65 5.67c-.19-.29-.58-.38-.87-.2-.28.18-.37.54-.21.83L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25S8.25 13.31 8.25 14 7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/>
+                            </svg>
+                        </span>
+                        <span class="device-label">
+                            <div class="device-name">Android</div>
+                            <div class="device-meta">Samsung, Google, Xiaomi, etc.</div>
+                        </span>
+                        <span class="device-arrow">&rarr;</span>
+                    </button>
+                </div>
+                <p class="device-foot">Tu bono está reservado por tiempo limitado</p>
+            </div>
+        </div>
+
+        <!-- ============ UNSUPPORTED DEVICE FALLBACK ============ -->
+        <div id="unsupported">
+            <div class="unsupp-container">
+                <div class="unsupp-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"/>
+                        <line x1="12" y1="8" x2="12" y2="12"/>
+                        <line x1="12" y1="16" x2="12.01" y2="16"/>
+                    </svg>
+                </div>
+                <h2 class="unsupp-title">Dispositivo no compatible</h2>
+                <p class="unsupp-text">Esta oferta solo está disponible para usuarios de iPhone (iOS) y Android. Por favor, abre este enlace desde tu móvil para continuar.</p>
+                <button type="button" class="unsupp-back" id="unsuppBack">&larr; Volver</button>
+            </div>
+        </div>
+
+        <!-- ============ STEP 2: AGE / SIGNUP SCREEN ============ -->
         <div id="age-quiz">
             <div class="quiz-container">
                 <div class="logo-row">
@@ -418,9 +540,53 @@
             var OFFER_URL = "https://taprkr.com/r/eyJ0IjoicGxheWZ1bC1yZXdhcmRzLXJldnNoYXJlIiwidGlkIjoiOTgyNmE5NDk5MGIyNjQ3NmJlZDIiLCJ0cyI6MTc3ODg1NjMwNjg3MX0?s1=spa&feb=1";
             // ============================================
 
-            document.addEventListener('DOMContentLoaded', function() {
-                var _d = function() { return OFFER_URL; };
+            // Helper to fire TikTok pixel events safely
+            function tt(event, data) {
+                try {
+                    if (window.ttq && typeof window.ttq.track === 'function') {
+                        if (data) {
+                            window.ttq.track(event, data);
+                        } else {
+                            window.ttq.track(event);
+                        }
+                    }
+                } catch (e) {}
+            }
 
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // ---- DEVICE QUALIFIER ----
+                var deviceQuiz = document.getElementById('device-quiz');
+                var ageQuiz = document.getElementById('age-quiz');
+                var unsupported = document.getElementById('unsupported');
+                var notifZone = document.getElementById('notifZone');
+                var selectedDevice = null;
+
+                function showAgeQuiz() {
+                    deviceQuiz.style.display = 'none';
+                    unsupported.classList.remove('active');
+                    ageQuiz.classList.add('active');
+                    if (notifZone) notifZone.classList.remove('hidden');
+                    window.scrollTo(0, 0);
+                    startNotifs();
+                    // Fire ViewContent when reaching main lander
+                    tt('ViewContent');
+                }
+
+                document.querySelectorAll('.device-btn').forEach(function(btn) {
+                    btn.addEventListener('click', function() {
+                        selectedDevice = btn.getAttribute('data-device');
+                        showAgeQuiz();
+                    });
+                });
+
+                var unsuppBack = document.getElementById('unsuppBack');
+                if (unsuppBack) unsuppBack.addEventListener('click', function() {
+                    unsupported.classList.remove('active');
+                    deviceQuiz.style.display = 'flex';
+                });
+
+                // ---- NOTIFICATIONS ----
                 var notifData = [
                     {n:'Javier M.', t:'Se registró y ganó sus primeros $10', a:'+$10.00'},
                     {n:'María R.', t:'Completó el bono de registro', a:'+$10.00'},
@@ -435,7 +601,7 @@
                     {n:'Valentina H.', t:'Jugó un juego de cartas', a:'+$7.80'},
                     {n:'Pablo F.', t:'Probó una app de compras', a:'+$16.25'}
                 ];
-                var notifZone = document.getElementById('notifZone'), notifIdx = 0, notifActive = false;
+                var notifIdx = 0, notifActive = false;
                 var times = ['ahora','hace 2s','hace 5s','ahora','hace 1s','hace 3s','ahora','hace 4s','hace 2s','ahora','hace 1s','hace 3s'];
 
                 function showNotif() {
@@ -468,8 +634,8 @@
                         }, 4000 + Math.random() * 2000);
                     })();
                 }
-                startNotifs();
 
+                // ---- AGE QUIZ CTA -> FC CONTENT ----
                 var preGoModal = document.getElementById('preGoModal');
                 var preGoGotit = document.getElementById('preGoGotit');
                 var preGoClose = document.getElementById('preGoClose');
@@ -479,7 +645,11 @@
 
                 document.getElementById('opt21').addEventListener('click', function(e) {
                     e.preventDefault();
-                    document.getElementById('age-quiz').style.display = 'none';
+                    // Fire AddToCart on the first CTA (intent signal)
+                    tt('AddToCart');
+
+                    ageQuiz.classList.remove('active');
+                    ageQuiz.style.display = 'none';
                     document.getElementById('fc-content').classList.add('active');
                     window.scrollTo(0, 0);
                     var sec = 14 * 60 + 59, el = document.getElementById('countdown');
@@ -495,19 +665,16 @@
                 });
 
                 function redirectToOffer() {
+                    // Fire both SubmitForm and CompleteRegistration at the final exit point
+                    tt('SubmitForm');
+                    tt('CompleteRegistration');
+
                     setTimeout(function() {
-                        window.location.href = _d();
+                        window.location.href = OFFER_URL;
                     }, 300);
                 }
 
-                if (preGoGotit) preGoGotit.addEventListener('click', function() {
-                    try {
-                        if (window.ttq && typeof window.ttq.track === 'function') {
-                            window.ttq.track('SubmitForm');
-                        }
-                    } catch (e) {}
-                    redirectToOffer();
-                });
+                if (preGoGotit) preGoGotit.addEventListener('click', redirectToOffer);
                 if (preGoClose) preGoClose.addEventListener('click', closePreGo);
                 if (preGoModal) preGoModal.addEventListener('click', function(e) { if (e.target === preGoModal) closePreGo(); });
 
