@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex">
+    <title>750€ auf PayPal erhalten</title>
+    
+    <link rel="preconnect" href="https://analytics.tiktok.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- TikTok Pixel Code Start -->
+    <script>
+      !function (w, d, t) {
+        w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};
+        
+        ttq.load('D59FVTRC77U7I2652P20');
+        ttq.page();
+      }(window, document, 'ttq');
+    </script>
+    <!-- TikTok Pixel Code End -->
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: linear-gradient(180deg, #E6F0FA 0%, #F5F9FD 100%);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      .frame {
+        background: #ffffff;
+        border-radius: 22px;
+        max-width: 420px;
+        width: 90%;
+        margin: 40px auto;
+        padding: 30px 24px;
+        box-shadow: 0 6px 20px rgba(0, 48, 135, 0.15);
+        text-align: center;
+        transition: all 0.4s ease;
+      }
+
+      .logo {
+        width: 80px;
+        height: 80px;
+        border-radius: 16px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 15px rgba(0, 48, 135, 0.2);
+        border: 2px solid #003087;
+        padding: 8px;
+        background: white;
+        object-fit: contain;
+      }
+
+      h1 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+        color: #1d1d1f;
+        font-weight: 800;
+      }
+
+      p {
+        font-size: 0.95rem;
+        color: #6e6e73;
+        margin-bottom: 20px;
+      }
+
+      .progress-bar {
+        width: 100%;
+        height: 10px;
+        background: #f5f5f7;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 25px;
+      }
+
+      .progress {
+        height: 100%;
+        width: 30%;
+        background: linear-gradient(90deg, #003087 0%, #009CDE 100%);
+        border-radius: 10px;
+        transition: width 1s ease;
+      }
+
+      .step2 .progress {
+        width: 77%;
+      }
+
+      select {
+        width: 100%;
+        padding: 16px;
+        border-radius: 12px;
+        border: 2px solid #d2d2d7;
+        font-size: 1rem;
+        cursor: pointer;
+        background-color: #fff;
+        color: #1d1d1f;
+        font-weight: 500;
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23003087' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 16px center;
+        transition: all 0.3s ease;
+      }
+
+      select:focus {
+        outline: none;
+        border-color: #003087;
+        box-shadow: 0 0 0 3px rgba(0, 48, 135, 0.15);
+      }
+
+      .success-badge {
+        background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(34, 197, 94, 0.05));
+        border: 1px solid rgba(34, 197, 94, 0.3);
+        color: #22c55e;
+        padding: 10px 20px;
+        border-radius: 50px;
+        font-size: 14px;
+        font-weight: 700;
+        display: inline-block;
+        margin-bottom: 20px;
+      }
+
+      .steps-card {
+        background: linear-gradient(135deg, rgba(0, 48, 135, 0.03), rgba(0, 156, 222, 0.06));
+        border: 1px solid rgba(0, 48, 135, 0.15);
+        border-radius: 16px;
+        padding: 20px;
+        margin: 20px 0;
+      }
+
+      .step-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(0, 48, 135, 0.1);
+      }
+
+      .step-item:last-child {
+        border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      .step-item:first-child {
+        padding-top: 0;
+      }
+
+      .step-number {
+        width: 32px;
+        height: 32px;
+        background: linear-gradient(135deg, #003087, #009CDE);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 800;
+        font-size: 14px;
+        flex-shrink: 0;
+      }
+
+      .step-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        text-align: left;
+      }
+
+      .step-text strong {
+        color: #1d1d1f;
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .step-text span {
+        color: #6e6e73;
+        font-size: 13px;
+      }
+
+      .earnings-box {
+        background: linear-gradient(135deg, #003087, #009CDE);
+        border-radius: 14px;
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin: 20px 0;
+      }
+
+      .earnings-icon {
+        font-size: 32px;
+      }
+
+      .earnings-text {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+      }
+
+      .earnings-label {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      .earnings-amount {
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 900;
+      }
+
+      .trust-badges {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+      }
+
+      .trust-item {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        color: #6e6e73;
+        font-weight: 600;
+      }
+
+      .trust-item span:first-child {
+        font-size: 14px;
+      }
+
+      .earning-highlight {
+        color: #003087;
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      .qualifier-options {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+      }
+
+      .qualifier-btn {
+        background: #ffffff;
+        border: 2px solid #d2d2d7;
+        border-radius: 14px;
+        padding: 18px;
+        color: #1d1d1f;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        text-align: left;
+      }
+
+      .qualifier-btn:hover {
+        background: rgba(0, 48, 135, 0.05);
+        border-color: #003087;
+        transform: translateX(5px);
+      }
+
+      .qualifier-btn.disabled {
+        opacity: 0.5;
+      }
+
+      .qualifier-btn-icon {
+        font-size: 22px;
+        width: 40px;
+        height: 40px;
+        background: linear-gradient(135deg, #003087, #009CDE);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+
+      .qualifier-btn-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .qualifier-btn-title {
+        font-weight: 700;
+        color: #1d1d1f;
+      }
+
+      .qualifier-btn-desc {
+        font-size: 12px;
+        color: #6e6e73;
+        font-weight: 500;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 20px 0;
+        text-align: left;
+      }
+
+      ul li {
+        color: #1d1d1f;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      ul li::before {
+        content: "✓";
+        color: #ffffff;
+        font-weight: bold;
+        background: linear-gradient(135deg, #003087, #009CDE);
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        flex-shrink: 0;
+      }
+
+      .cta-button {
+        background: linear-gradient(135deg, #003087 0%, #009CDE 100%);
+        color: #fff;
+        border: none;
+        border-radius: 14px;
+        padding: 18px 24px;
+        font-size: 1.1rem;
+        font-weight: 800;
+        cursor: pointer;
+        width: 100%;
+        margin-top: 20px;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 8px 25px rgba(0, 48, 135, 0.35);
+        text-decoration: none;
+        display: block;
+        text-align: center;
+      }
+
+      .cta-button:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 35px rgba(0, 48, 135, 0.45);
+      }
+
+      .microtext {
+        font-size: 0.8rem;
+        color: #6e6e73;
+        margin-top: 12px;
+      }
+
+      .security-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 15px;
+        font-size: 12px;
+        color: #6e6e73;
+      }
+
+      .sorry-box {
+        background: rgba(255, 87, 87, 0.1);
+        border: 1px solid rgba(255, 87, 87, 0.3);
+        border-radius: 12px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      .sorry-box p {
+        color: #ff5757;
+        margin: 0;
+        font-weight: 500;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 0.85rem;
+        color: #6e6e73;
+        padding: 20px 10px;
+        border-top: 1px solid #e8e8ed;
+        margin-top: auto;
+      }
+
+      footer a {
+        color: #6e6e73;
+        text-decoration: none;
+        margin: 0 8px;
+      }
+
+      footer a:hover {
+        color: #003087;
+      }
+
+      .notif-container {
+        position: fixed;
+        top: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%;
+        max-width: 380px;
+        z-index: 9999;
+        pointer-events: none;
+      }
+
+      .notif {
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid #d2d2d7;
+        border-radius: 12px;
+        padding: 12px 16px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        opacity: 0;
+        transform: translateY(-30px);
+        transition: all .5s ease;
+        color: #1d1d1f;
+        margin: 0 0 8px 0;
+      }
+
+      .notif.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .notif .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #003087, #009CDE);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        font-size: 12px;
+        color: white;
+        flex-shrink: 0;
+      }
+
+      .earned {
+        font-weight: 900;
+        color: #003087;
+      }
+
+      @media (max-width: 480px) {
+        .frame {
+          margin: 20px auto;
+          padding: 24px 20px;
+        }
+
+        h1 {
+          font-size: 1.25rem;
+        }
+
+        .cta-button {
+          font-size: 1rem;
+          padding: 16px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="notif-container" id="notifBox"></div>
+
+    <!-- Step 1: Device Qualifier -->
+    <div class="frame" id="step1">
+      <img class="logo" src="assets/paypal-logo.png" alt="PayPal Logo">
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      <h1>Welches Gerät benutzt du?</h1>
+      
+      <select id="deviceSelect">
+        <option value="" disabled selected>Wähle dein Gerät</option>
+        <option value="ios">iPhone / iOS</option>
+        <option value="android">Android</option>
+      </select>
+    </div>
+
+    <!-- Step 2: Offer Details -->
+    <div class="frame step2" id="step2" style="display:none;">
+      <div class="success-badge">✅ Du bist berechtigt!</div>
+      
+      <img class="logo" src="assets/paypal-logo.png" alt="PayPal Logo">
+      
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      
+      <h1>Hol dir deine 750€ PayPal-Belohnung</h1>
+      <p>Erledige ein paar einfache Schritte, um deine Auszahlung zu erhalten</p>
+      
+      <div class="steps-card">
+        <div class="step-item">
+          <div class="step-number">1</div>
+          <div class="step-text">
+            <strong>Klicke auf den Button unten</strong>
+            <span>Erstelle dein kostenloses Konto in 60 Sekunden</span>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">2</div>
+          <div class="step-text">
+            <strong>Erledige 3-5 einfache Angebote</strong>
+            <span>Jedes Angebot bringt dir <em class="earning-highlight">60-120€</em></span>
+          </div>
+        </div>
+        
+        <div class="step-item">
+          <div class="step-number">3</div>
+          <div class="step-text">
+            <strong>Lass dir per PayPal auszahlen</strong>
+            <span>Schnelle & direkte Zahlungen auf dein Konto</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="earnings-box">
+        <div class="earnings-icon">💰</div>
+        <div class="earnings-text">
+          <span class="earnings-label">Durchschnittlicher Verdienst pro Woche</span>
+          <span class="earnings-amount">400€ - 750€</span>
+        </div>
+      </div>
+
+      <a href="https://uplevelrewarded.com/aff_c?offer_id=1600&aff_id=9155&source=97cn67crsuszl" class="cta-button" id="redirectBtn">
+        🎯 Jetzt 750€ sichern
+      </a>
+      
+      <div class="trust-badges">
+        <div class="trust-item">
+          <span>🔒</span>
+          <span>Sicher</span>
+        </div>
+        <div class="trust-item">
+          <span>💳</span>
+          <span>Keine Karte nötig</span>
+        </div>
+        <div class="trust-item">
+          <span>⚡</span>
+          <span>Sofortiger Zugang</span>
+        </div>
+      </div>
+
+      <div class="microtext">
+        Schließe dich über 50.000 Mitgliedern an, die bereits mit PayPal verdienen
+      </div>
+    </div>
+
+    <footer>
+      <a href="#">Datenschutz</a>
+      |
+      <a href="#">AGB</a>
+      |
+      <a href="#">Haftungsausschluss</a>
+      <br>
+      © 2025. Alle Rechte vorbehalten.
+    </footer>
+
+    <script>
+      (function() {
+        // Fire ViewContent on page load
+        if (typeof ttq !== 'undefined') {
+          ttq.track('ViewContent');
+          console.log('🔥 TikTok Event Fired: ViewContent');
+        }
+
+        const notifications = [
+          { name: "Michael", game: "Schnelle Angebote", amount: 64, avatar: "M", time: "vor 24 Minuten" },
+          { name: "Mia", game: "Bonus-Angebote", amount: 89, avatar: "M", time: "vor 22 Minuten" },
+          { name: "Lukas", game: "Angebot abgeschlossen", amount: 118, avatar: "L", time: "vor 13 Minuten" },
+          { name: "Dennis", game: "Spezial-Angebote", amount: 79, avatar: "D", time: "vor 17 Minuten" },
+          { name: "Sarah", game: "Schnelle Aufgaben", amount: 103, avatar: "S", time: "vor 32 Minuten" },
+          { name: "Jonas", game: "Bonus-Angebote", amount: 96, avatar: "J", time: "vor 8 Minuten" },
+          { name: "Emma", game: "Einfache Angebote", amount: 73, avatar: "E", time: "vor 19 Minuten" }
+        ];
+
+        let notifIndex = 0;
+
+        function showNotif() {
+          const box = document.getElementById("notifBox");
+          const notification = notifications[notifIndex];
+          
+          const n = document.createElement("div");
+          n.className = "notif";
+          n.innerHTML = `
+            <div class="avatar">${notification.avatar}</div>
+            <div>
+              <strong>${notification.name}</strong> hat gerade <span class="earned">${notification.amount}€</span> mit ${notification.game} verdient · ${notification.time}
+            </div>
+          `;
+          
+          box.appendChild(n);
+          requestAnimationFrame(() => n.classList.add("show"));
+          
+          setTimeout(() => {
+            n.classList.remove("show");
+            setTimeout(() => {
+              if (box.contains(n)) box.removeChild(n);
+            }, 500);
+          }, 5000);
+          
+          notifIndex = (notifIndex + 1) % notifications.length;
+          setTimeout(showNotif, 5000 + Math.random() * 2000);
+        }
+
+        window.addEventListener("load", () => {
+          setTimeout(showNotif, 2000);
+        });
+
+        // Dropdown selection handler
+        const deviceSelect = document.getElementById('deviceSelect');
+        deviceSelect.addEventListener('change', function() {
+          const device = this.value;
+          console.log("Device:", device);
+          
+          // Fire ClickButton event on qualifier
+          if (typeof ttq !== 'undefined') {
+            ttq.track('ClickButton');
+            console.log('🔥 TikTok Event Fired: ClickButton');
+          }
+          
+          document.getElementById("step1").style.display = "none";
+          document.getElementById("step2").style.display = "block";
+          
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // CTA click handler for pixel events
+        document.getElementById("redirectBtn").addEventListener("click", function() {
+          console.log("CTA clicked - tracking conversion");
+          
+          // Fire InitiateCheckout and CompleteRegistration on CTA click
+          if (typeof ttq !== 'undefined') {
+            ttq.track('InitiateCheckout');
+            console.log('🔥 TikTok Event Fired: InitiateCheckout');
+            ttq.track('CompleteRegistration');
+            console.log('🔥 TikTok Event Fired: CompleteRegistration');
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
